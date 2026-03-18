@@ -10,7 +10,9 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
       return res.status(400).json({ error: '无效的相册ID' });
     }
 
-    const albumPath = path.join(process.cwd(), 'public', 'albums', id);
+    // 解码 URL 编码的相册名称
+    const decodedId = decodeURIComponent(id);
+    const albumPath = path.join(process.cwd(), 'public', 'albums', decodedId);
 
     // 检查相册是否存在
     if (!fs.existsSync(albumPath) || !fs.statSync(albumPath).isDirectory()) {
@@ -23,13 +25,13 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
         const ext = path.extname(file).toLowerCase();
         return ['.jpg', '.jpeg', '.png', '.gif', '.webp'].includes(ext);
       })
-      .map(file => `/albums/${id}/${file}`);
+      .map(file => `/albums/${decodedId}/${file}`);
 
     // 随机排序图片
     const shuffledImages = images.sort(() => Math.random() - 0.5);
 
     res.status(200).json({ 
-      albumName: id,
+      albumName: decodedId,
       images: shuffledImages 
     });
   } catch (error) {
