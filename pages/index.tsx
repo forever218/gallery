@@ -22,11 +22,8 @@ export default function Home() {
   return (
     <Layout>
       <div className="mb-8">
-        <h1 className="mb-2 text-3xl font-bold text-black dark:text-white">
-          随机图片展示
-        </h1>
-        <p className="text-gray-600 dark:text-gray-400">
-          浏览所有相册中的图片
+        <p className="text-3xl font-light" style={{ fontFamily: 'Ma Shan Zheng, cursive' }}>
+          我想记录的，是这世界的灵魂
         </p>
       </div>
 
