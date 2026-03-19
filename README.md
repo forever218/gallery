@@ -25,16 +25,19 @@
 - Tailwind CSS
 
 ## 安装和运行
-
-1. 安装依赖：
+1. 克隆仓库
+```bash
+git clone https://github.com/forever218/N-Gallery.git
+```
+2. 安装依赖：
 ```bash
 npm install
 ```
-
-2. 启动开发服务器：
+3. 启动开发服务器：
 ```bash
 npm run dev
 ```
+打开浏览器访问 [http://localhost:3000](http://localhost:3000)
 
 ## 构建和部署
 
@@ -47,8 +50,6 @@ npm run build
 ```bash
 npm start
 ```
-
-3. 打开浏览器访问 [http://localhost:3000](http://localhost:3000)
 
 ## 使用方法
 
