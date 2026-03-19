@@ -42,10 +42,10 @@ export default function About() {
           </h2>
 
           <p>
-            本站使用Next.js构建，部署在github上，通过EdgeOne加速
+            本站使用Next.js构建，部署在Github上，通过EdgeOne加速
           </p>
           <p>
-            已在<a href="https://github.com/forever218/gallery" style={{ color: 'blue' }}>Github</a>开源
+            框架已在<a href="https://github.com/forever218/gallery" style={{ color: 'blue' }}>Github</a>开源
           </p>
           <br/>
 
@@ -63,9 +63,10 @@ export default function About() {
           <h2 className="mt-6 text-3xl font-semibold text-black dark:text-white">
             政策
           </h2>
-
           <p>
-            
+            本站不会收集您的任何信息
+          </p>
+          <p>
             所有图片均采用<a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" style={{ color: 'blue' }}>CC BY-NC-SA 4.0</a>协议，您可以自由使用，须注明出处
           </p>
           <p>
@@ -77,7 +78,10 @@ export default function About() {
           </h2>
 
           <p>
-            如有任何问题，或是摄影技术上的交流，欢迎通过邮箱联系我
+            如有任何问题、摄影上的交流
+          </p>
+          <p>
+            亦或是约拍、合作，欢迎通过邮箱联系我
           </p>
           <p>
             3316703158@qq.com
@@ -86,7 +90,7 @@ export default function About() {
 <br/>
 <br/>
           <p className="mt-6 text-sm text-gray-500 dark:text-gray-400">
-            LSR最后编辑于 2026.3.18
+            LSR最后编辑于 2026.3.18  ：）
           </p>
         </div>
       </div>
