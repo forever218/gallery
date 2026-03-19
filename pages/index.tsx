@@ -22,7 +22,7 @@ export default function Home() {
   return (
     <Layout>
       <div className="mb-8">
-        <p className="text-3xl font-light" style={{ fontFamily: 'Ma Shan Zheng, cursive' }}>
+        <p className="text-2xl font-light dark:text-white" style={{ fontFamily: 'Ma Shan Zheng, cursive' }}>
           我想记录的，是这世界的灵魂
         </p>
       </div>
