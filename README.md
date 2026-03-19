@@ -1,10 +1,13 @@
-# 极简风格相册应用
+
+![屏幕截图 2026-03-19 164520](https://github.com/user-attachments/assets/770e53d0-c6a8-4be4-83bb-c73ac06f35b8)
+
+# N-Gallery
 
 一个基于 Next.js 构建的现代化相册应用，具有极简风格设计和瀑布流布局
 
 ## 预览
 
-👉 ![我的相册](https://img.2am.top)
+👉 [我的相册](https://img.2am.top)
 
 ## 功能特点
 
