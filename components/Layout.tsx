@@ -54,7 +54,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
           {showLoadingInfo && (
             <div className="hidden md:block absolute left-1/2 transform -translate-x-1/2 transition-opacity duration-500 opacity-100">
               <div className="px-4 py-1.5 rounded-full bg-gray-100 dark:bg-gray-800 text-sm text-gray-700 dark:text-gray-300">
-                {loadingInfo.count}张图片加载于{loadingInfo.time}ms
+                {loadingInfo?.count}张图片加载于{loadingInfo?.time}ms
               </div>
             </div>
           )}
