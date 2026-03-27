@@ -67,7 +67,17 @@ export default function About() {
             本站不会收集您的任何信息
           </p>
           <p>
-            所有图片均采用<a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" style={{ color: 'blue' }}>CC BY-NC-SA 4.0</a>协议，您可以自由使用，须注明出处
+            所有图片均采用<a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" style={{ color: 'blue' }}>CC BY-NC-SA 4.0</a>协议
+<span style={{ display: 'inline-flex', alignItems: 'center', marginLeft: '.2em' }}>
+  <img src="https://mirrors.creativecommons.org/presskit/icons/cc.svg" alt="" style={{ maxWidth: '1em', maxHeight: '1em' }} />
+  <img src="https://mirrors.creativecommons.org/presskit/icons/by.svg" alt="" style={{ maxWidth: '1em', maxHeight: '1em', marginLeft: '.2em' }} />
+  <img src="https://mirrors.creativecommons.org/presskit/icons/nc.svg" alt="" style={{ maxWidth: '1em', maxHeight: '1em', marginLeft: '.2em' }} />
+  <img src="https://mirrors.creativecommons.org/presskit/icons/sa.svg" alt="" style={{ maxWidth: '1em', maxHeight: '1em', marginLeft: '.2em' }} />
+</span>
+
+            </p>
+          <p>
+            您可以在遵循该协议的条件下自由使用
           </p>
           <p>
             严禁用于任何商业、违法用途
