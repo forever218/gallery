@@ -8,7 +8,7 @@ export default function Home() {
 
   useEffect(() => {
     const startTime = performance.now();
-    fetch('/api/images')
+    fetch('/data/images.json')
       .then(res => res.json())
       .then(data => {
         const endTime = performance.now();

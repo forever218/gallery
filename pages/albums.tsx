@@ -14,7 +14,7 @@ export default function Albums() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch('/api/albums')
+    fetch('/data/albums.json')
       .then(res => res.json())
       .then(data => {
         setAlbums(data.albums);

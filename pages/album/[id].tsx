@@ -13,7 +13,7 @@ export default function Album() {
 
   useEffect(() => {
     if (id) {
-      fetch(`/api/album/${encodeURIComponent(id as string)}`)
+      fetch(`/data/album/${encodeURIComponent(id as string)}.json`)
         .then(res => res.json())
         .then(data => {
           setImages(data.images);

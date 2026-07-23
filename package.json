@@ -3,8 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
-    "build": "next build && node fix.js",
+    "dev": "node scripts/generate-data.js && next dev",
+    "build": "node scripts/generate-data.js && next build && node fix.js",
     "start": "next start",
     "lint": "next lint"
   },
