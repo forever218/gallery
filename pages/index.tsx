@@ -34,7 +34,7 @@ export default function Home() {
     <Layout>
       <div className="mb-8">
         <p className="text-2xl font-light dark:text-white" style={{ fontFamily: 'Ma Shan Zheng, cursive' }}>
-          我想记录的，是这世界的灵魂
+          记录 ⌈ 真实 ⌋
         </p>
       </div>
 
