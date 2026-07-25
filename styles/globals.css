@@ -47,3 +47,19 @@ body {
 .masonry-grid_col > div {
   margin-bottom: 1rem;
 }
+
+/* 右下角弹窗动画 */
+@keyframes slide-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-slide-up {
+  animation: slide-up 0.4s ease-out;
+}

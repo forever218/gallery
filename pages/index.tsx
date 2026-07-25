@@ -1,10 +1,12 @@
 import { useEffect, useState } from 'react';
 import Layout from '../components/Layout';
 import MasonryGrid from '../components/MasonryGrid';
+import UpdatePopup from '../components/UpdatePopup';
 
 export default function Home() {
   const [images, setImages] = useState<string[]>([]);
   const [loading, setLoading] = useState(true);
+  const [lastUpdated, setLastUpdated] = useState<string | null>(null);
 
   useEffect(() => {
     const startTime = performance.now();
@@ -14,6 +16,7 @@ export default function Home() {
         const endTime = performance.now();
         const loadTime = Math.round(endTime - startTime);
         setImages(data.images);
+        setLastUpdated(data.lastUpdated);
         setLoading(false);
         
         // 发送自定义事件，通知Layout组件图片已加载
@@ -51,6 +54,9 @@ export default function Home() {
           </div>
         </div>
       )}
+
+      {/* 右下角更新提示弹窗 */}
+      {lastUpdated && <UpdatePopup lastUpdated={lastUpdated} />}
     </Layout>
   );
 }

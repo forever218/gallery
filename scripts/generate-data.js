@@ -14,7 +14,8 @@ fs.mkdirSync(dataDir, { recursive: true });
 if (!fs.existsSync(albumsDir)) {
   fs.mkdirSync(albumsDir, { recursive: true });
   // 没有相册时写入空数据
-  fs.writeFileSync(path.join(dataDir, 'images.json'), JSON.stringify({ images: [] }));
+  const now = new Date().toISOString();
+  fs.writeFileSync(path.join(dataDir, 'images.json'), JSON.stringify({ images: [], lastUpdated: now }));
   fs.writeFileSync(path.join(dataDir, 'albums.json'), JSON.stringify({ albums: [] }));
   console.log('No albums found, generated empty data files.');
   return;
@@ -30,15 +31,26 @@ const albums = fs.readdirSync(albumsDir).filter(item => {
 
 const albumDataList = [];
 const allImages = [];
+let lastUpdated = null;
 
 albums.forEach(albumName => {
   const albumPath = path.join(albumsDir, albumName);
-  const images = fs.readdirSync(albumPath)
+  const imageFiles = fs.readdirSync(albumPath)
     .filter(file => {
       const ext = path.extname(file).toLowerCase();
       return imageExtensions.includes(ext);
-    })
-    .map(file => `/albums/${albumName}/${file}`);
+    });
+
+  const images = imageFiles.map(file => `/albums/${albumName}/${file}`);
+
+  // 更新最后修改时间
+  imageFiles.forEach(file => {
+    const filePath = path.join(albumPath, file);
+    const mtime = fs.statSync(filePath).mtimeMs;
+    if (lastUpdated === null || mtime > lastUpdated) {
+      lastUpdated = mtime;
+    }
+  });
 
   // 收集所有图片
   allImages.push(...images);
@@ -68,7 +80,10 @@ albums.forEach(albumName => {
 // 生成所有图片 JSON（随机排序）
 fs.writeFileSync(
   path.join(dataDir, 'images.json'),
-  JSON.stringify({ images: allImages.sort(() => Math.random() - 0.5) })
+  JSON.stringify({
+    images: allImages.sort(() => Math.random() - 0.5),
+    lastUpdated: lastUpdated ? new Date(lastUpdated).toISOString() : new Date().toISOString(),
+  })
 );
 
 // 生成所有相册 JSON
