@@ -22,7 +22,10 @@ export default function ImageViewer({ images, initialIndex, onClose }: ImageView
   }, [images.length, onClose]);
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/90 backdrop-blur-sm">
+    <div
+      className="fixed inset-0 z-50 flex items-center justify-center bg-black/90 backdrop-blur-sm"
+      onClick={onClose}
+    >
       <button
         onClick={onClose}
         className="absolute right-4 top-4 rounded-full bg-white/10 p-2 text-white hover:bg-white/20"
@@ -32,14 +35,20 @@ export default function ImageViewer({ images, initialIndex, onClose }: ImageView
       </button>
 
       <button
-        onClick={() => setCurrentIndex((prev) => (prev > 0 ? prev - 1 : images.length - 1))}
+        onClick={(e) => {
+          e.stopPropagation();
+          setCurrentIndex((prev) => (prev > 0 ? prev - 1 : images.length - 1));
+        }}
         className="absolute left-4 rounded-full bg-white/10 p-3 text-white hover:bg-white/20"
         aria-label="上一张"
       >
         <ChevronLeft size={32} />
       </button>
 
-      <div className="relative max-h-[90vh] max-w-[90vw]">
+      <div
+        className="relative max-h-[90vh] max-w-[90vw]"
+        onClick={(e) => e.stopPropagation()}
+      >
         <img
           src={images[currentIndex]}
           alt={`图片 ${currentIndex + 1}`}
@@ -51,7 +60,10 @@ export default function ImageViewer({ images, initialIndex, onClose }: ImageView
       </div>
 
       <button
-        onClick={() => setCurrentIndex((prev) => (prev < images.length - 1 ? prev + 1 : 0))}
+        onClick={(e) => {
+          e.stopPropagation();
+          setCurrentIndex((prev) => (prev < images.length - 1 ? prev + 1 : 0));
+        }}
         className="absolute right-4 rounded-full bg-white/10 p-3 text-white hover:bg-white/20"
         aria-label="下一张"
       >
