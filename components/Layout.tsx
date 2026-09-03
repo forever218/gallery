@@ -60,17 +60,17 @@ export default function Layout({ children }: { children: React.ReactNode }) {
           )}
           
           <nav className="flex items-center gap-6">
-            <Link href="/" className="text-sm font-medium text-gray-700 hover:text-black dark:text-gray-300 dark:hover:text-white">
-              主页
-            </Link>
             <Link href="/albums" className="text-sm font-medium text-gray-700 hover:text-black dark:text-gray-300 dark:hover:text-white">
               相册
+            </Link>
+            <Link href="/about" className="text-sm font-medium text-gray-700 hover:text-black dark:text-gray-300 dark:hover:text-white">
+              关于
             </Link>
             <Link href="https://2am.top" className="text-sm font-medium text-gray-700 hover:text-black dark:text-gray-300 dark:hover:text-white">
               博客
             </Link>
-            <Link href="/about" className="text-sm font-medium text-gray-700 hover:text-black dark:text-gray-300 dark:hover:text-white">
-              关于
+            <Link href="https://status.class8.top" className="text-sm font-medium text-gray-700 hover:text-black dark:text-gray-300 dark:hover:text-white">
+              运行状态
             </Link>
             <button
               onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
